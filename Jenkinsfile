@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // git branch: 'main', url:'https://github.com/dines14-coder/rmkvlocal.git'
+                 git branch: 'main', url:"https://github.com/Rahul-2003-2003/react_To_Do_list.git"
                 sh "ls -ltr"
             }
         }
         stage('Build Image and Push') {
             environment {
-                DOCKER_IMAGE = "dinesh14coder/angular-app:angular${BUILD_NUMBER}"
+                DOCKER_IMAGE = "rahul20032003/angular-app:angular${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials("dock-cred")
             }
             steps {
@@ -30,13 +30,13 @@ pipeline {
         stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "rmkvlocal"
-            GIT_USER_NAME = "dines14-coder"
+            GIT_USER_NAME = "rahul-2003-2003"
         }
         steps {
             withCredentials([string(credentialsId: 'rmkv', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    git config user.email "dvrdineshdvrdinesh728@gmail.com"
-                    git config user.name "dines14-coder"
+                    git config user.email "rahulboobalan20@gmail.com"
+                    git config user.name "rahul-2003-2003"
                     REPLACE="angular-app:angular${BUILD_NUMBER}"
                     sed -i -E "s/angular-app:.*/${REPLACE}/g" angular-manifest/deployment.yml
                     git add angular-manifest/deployment.yml
