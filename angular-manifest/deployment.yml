@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: angularapp
-        image: rahul20032003/angular-app:angular5
+        image: rahul20032003/angular-app:angular
         ports:
         - containerPort: 80
       imagePullSecrets:
