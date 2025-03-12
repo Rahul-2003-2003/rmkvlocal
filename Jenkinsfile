@@ -36,6 +36,7 @@ pipeline {
             steps {
                 sh 'sed -i -E "s/angular-app:.*/${REPLACE}/g" docker-compose.yaml'
                 sh "ls -ltr"
+                 sh 'docker-compose down || true'
                 sh 'docker-compose -f docker-compose.yaml up -d'
             }
         }      
