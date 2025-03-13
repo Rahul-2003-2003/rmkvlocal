@@ -1,4 +1,4 @@
-+ docker push index.docker.io/dvrdinesh/rmkvdemo:angular
+  + docker push index.docker.io/dvrdinesh/rmkvdemo:angular
 The push refers to repository [docker.io/dvrdinesh/rmkvdemo]
 ac7879fb8b35: Preparing
 2ca0b8e741f2: Preparing
