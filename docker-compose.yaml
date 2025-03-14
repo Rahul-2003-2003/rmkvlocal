@@ -1,6 +1,6 @@
 services:
   rmkv-app:
-    image: rahul20032003/angular-app:angular12
+    image: rahul20032003/angular-app:angular13
     container_name: frontend
     ports:
       - "89:80"
